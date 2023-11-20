@@ -4,15 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   password.addEventListener("input", () => {
     console.log(password.value);
     if (password.value) {
-      lengthscore = password.value.length * 10;
-      specialscore = ((password.value.match(/[!@#$%^&*()]/g) || []).length / password.value.length) * 25;
-      upperscore = ((password.value.match(/[ABCDEFGHIJKLMNOPQRSUVWXYZ]/g) || []).length / password.value.length) * 25;
-      numscore = ((password.value.match(/[123456789]/g) || []).length / password.value.length) * 25;
-      lowerscore = ((password.value.match(/[abcdefghijklmnopqrstuvwxyz]/g) || []).length / password.value.length) * 5;
-      combinedscore = (lengthscore + specialscore + upperscore + lowerscore) / (1 + spache.some(element => password.value.indexOf(element) !== -1) * 0.2 + /(..).*\1/.test(password.value) * 0.3);
-      console.log(spache.some(element => password.value.indexOf(element) !== -1));
-      console.log(combinedscore);
-      if (password.value) security.value = Math.floor(combinedscore ** 2 / 100) / 300;
+      lengthscore = password.value.length * 10; // length = 10% of the score
+      specialscore = ((password.value.match(/[!@#$%^&*()]/g) || []).length / password.value.length) * 25; // # of special chars = 25% of the score
+      upperscore = ((password.value.match(/[ABCDEFGHIJKLMNOPQRSUVWXYZ]/g) || []).length / password.value.length) * 25; // # of uppercase chars = 25% of the score
+      numscore = ((password.value.match(/[123456789]/g) || []).length / password.value.length) * 25; // # of # = 25% of the score
+      lowerscore = ((password.value.match(/[abcdefghijklmnopqrstuvwxyz]/g) || []).length / password.value.length) * 5; // # of lowercase chars = 5% of the score
+      combinedscore = (lengthscore + specialscore + upperscore + lowerscore) / (1 + spache.some(element => password.value.indexOf(element) !== -1) * 0.2 + /(..).*\1/.test(password.value) * 0.3); // combiining scores + adding penalties for dicttionary words and repeated chars
+      if (password.value) security.value = Math.floor(combinedscore ** 2 / 100) / 300; // setting the progress bar to the right value - adding a bit of an exponential curve to the result
     }
   });
 });
