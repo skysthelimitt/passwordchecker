@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+h1 {
+    font-size: 40px;
+    color: rgb(201, 231, 248);
+    text-shadow: 1px 1px 3px #131313;
+}
+input {
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    outline: none;
+
+    border-radius: 7px; 
+    border-width: 3px;
+    border-style: solid;
+    background-color: rgba(144, 209, 247, 0.603);
+    border-color: rgba(144, 209, 247, 0.911);
+    text-shadow: 1px 1px 3px #131313;
+
+    box-shadow: 1px 1px 3px #131313;
+}
+progress {
+    width: 50%;
+    border-radius: 7px; 
+    border-width: 3px;
+    margin: 10px;
+    background-color: rgba(144, 209, 247, 0.377);
+    border-color: rgba(144, 209, 247, 0.6);
+    box-shadow: 1px 1px 3px #131313;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    background-image: url("wallhaven-r2yxm7_1920x1080.png");
+}
+p {
+    font-size: 16px;
+    color: rgb(201, 231, 248);
+    text-shadow: 1px 1px 3px #131313;
+}
+a, a:visited {
+    color: rgb(246, 252, 255);
+}
